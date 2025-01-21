@@ -5,7 +5,7 @@
 class ClapTrap {
 	public:
 		ClapTrap(void); // Canonical
-		ClapTrap(std::string CT_name);
+		ClapTrap(std::string player_name);
 		ClapTrap(ClapTrap const & src); // Canonical
 		~ClapTrap(void); // Canonical
 
@@ -19,9 +19,14 @@ class ClapTrap {
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 
-	private:
+	protected:
 		std::string	name;
-		unsigned int hit_points = 10;
-		unsigned int energy_points = 10;
-		unsigned int attack_damage = 0;
+		unsigned int hit_points;
+		unsigned int energy_points;
+		unsigned int attack_damage;
+
+	private:
+		static const unsigned int init_hit_points = 10;
+		static const unsigned int init_energy_points = 10;
+		static const unsigned int init_attack_damage = 0;
 };
