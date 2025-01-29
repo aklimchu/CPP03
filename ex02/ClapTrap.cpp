@@ -1,5 +1,7 @@
 #include "ClapTrap.hpp"
 
+//--------------------------------Constructors--------------------------------//
+
 ClapTrap::ClapTrap() : hit_points(init_hit_points), energy_points(init_energy_points), \
 	attack_damage(init_attack_damage) {
 	std::cout << "Default constructor ClapTrap called" << std::endl << std::endl;
@@ -17,6 +19,12 @@ ClapTrap::ClapTrap(ClapTrap const & src) {
 	*this = src;
 	return;
 }
+
+//---------------------------------Destructor---------------------------------//
+
+//-------------------------Copy assignment operator---------------------------//
+
+//-------------------------------Member functions------------------------------//
 
 std::string ClapTrap::getName() const {
 	std::cout << "getName member function called" << std::endl;

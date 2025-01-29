@@ -1,5 +1,7 @@
 #include "ClapTrap.hpp"
 
+//--------------------------------Constructors--------------------------------//
+
 ClapTrap::ClapTrap() {
 	std::cout << "Default constructor called" << std::endl << std::endl;
 	return;
@@ -15,6 +17,29 @@ ClapTrap::ClapTrap(ClapTrap const & src) {
 	*this = src;
 	return;
 }
+
+//---------------------------------Destructor---------------------------------//
+
+ClapTrap::~ClapTrap() {
+	std::cout << "Destructor called" << std::endl;
+	return;
+}
+
+//-------------------------Copy assignment operator---------------------------//
+
+ClapTrap & ClapTrap::operator=(ClapTrap const & rhs) {
+	std::cout << "Copy assignment operator called" << std::endl;
+	if (this != &rhs)
+	{
+		this->name = rhs.getName();
+		this->hit_points = rhs.getHitPoints();
+		this->energy_points = rhs.getEnergyPoints();
+		this->attack_damage = rhs.getAttachDamage();
+	}
+	return *this;
+}
+
+//-------------------------------Member functions------------------------------//
 
 std::string ClapTrap::getName() const {
 	std::cout << "getName member function called" << std::endl;
@@ -88,22 +113,4 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	this->energy_points -= 1;
 	std::cout << "ClapTrap " << this->name << " has " << this->hit_points << \
 		" hit points now" << std::endl << std::endl;
-}
-
-
-ClapTrap::~ClapTrap() {
-	std::cout << "Destructor called" << std::endl;
-	return;
-}
-
-ClapTrap & ClapTrap::operator=(ClapTrap const & rhs) {
-	std::cout << "Copy assignment operator called" << std::endl;
-	if (this != &rhs)
-	{
-		this->name = rhs.getName();
-		this->hit_points = rhs.getHitPoints();
-		this->energy_points = rhs.getEnergyPoints();
-		this->attack_damage = rhs.getAttachDamage();
-	}
-	return *this;
 }
