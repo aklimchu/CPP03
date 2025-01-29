@@ -15,7 +15,7 @@ WHITE = \033[0;97m
 NAME		= fragtrap
 
 # Compiler
-C++ 		= g++
+C++ 		= c++
 CFLAGS		= -Wall -Werror -Wextra -std=c++20
 RM			= rm -f
 RMDIR		= rm -rf
