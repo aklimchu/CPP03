@@ -18,7 +18,7 @@ This project is the fourth module of the C++ Piscine at 42. It delves deeper int
 
 ## 📂 Project Structure
 ```bash
-CPP01/
+CPP03/
 │── ex00/
 │── ex01/
 │── ex02/
